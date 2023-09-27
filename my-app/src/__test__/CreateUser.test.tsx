@@ -16,6 +16,10 @@ test('renders CreateUser and validates fields', () => {
     fireEvent.change(passwordInput, { target: { value: 'password' } });
 
     fireEvent.click(button);
+    expect(usernameInput).toHaveValue('testuser');
+    expect(emailInput).toHaveValue('test@email.com');
+    expect(passwordInput).toHaveValue('password');
+    expect(button).toBeEnabled();
 
     // You need to implement actual checks here, such as checking state or mocking handleSubmit
 });
